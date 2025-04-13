@@ -59,12 +59,6 @@ For styling and responsiveness, Tailwind CSS and responsive design principles ha
 Built using App Router of Next.js for improved performance and structure.
 
 
----
-
-
-## 🤝 Contributing
-Contributions are welcome! Feel free to fork the repo and submit a pull request.
-
 
 ---
 
