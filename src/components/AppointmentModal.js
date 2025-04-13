@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
-import { useAppointments } from '../context/AppointmentContext';
-import { formatTime } from '../utils/dates';
+import { useAppointments } from '../context/AppointmentContext'; // Importing the custom hook to access appointment context
+import { formatTime } from '../utils/dates'; // Importing a utility function to format time
 
 export default function AppointmentModal() {
+  // Destructuring functions and variables from the appointment context
   const {
     isModalOpen,
     setIsModalOpen,
@@ -14,10 +15,12 @@ export default function AppointmentModal() {
     setCurrentAppointment,
   } = useAppointments();
 
+  // Local state for form inputs
   const [title, setTitle] = useState('');
   const [time, setTime] = useState('09:00');
   const [description, setDescription] = useState('');
 
+  // Effect to populate form fields when editing an existing appointment
   useEffect(() => {
     if (currentAppointment) {
       setTitle(currentAppointment.title);
@@ -30,6 +33,7 @@ export default function AppointmentModal() {
     }
   }, [currentAppointment]);
 
+  // Handle form submission for adding or updating an appointment
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -45,14 +49,15 @@ export default function AppointmentModal() {
     };
 
     if (currentAppointment) {
-      updateAppointment({ ...appointmentData, id: currentAppointment.id });
+      updateAppointment({ ...appointmentData, id: currentAppointment.id }); // Update existing appointment
     } else {
-      addAppointment(appointmentData);
+      addAppointment(appointmentData); // Add new appointment
     }
 
-    handleClose();
+    handleClose(); // Close the modal after submission
   };
 
+  // Handle appointment deletion
   const handleDelete = () => {
     if (currentAppointment) {
       deleteAppointment(currentAppointment.id);
@@ -60,11 +65,13 @@ export default function AppointmentModal() {
     }
   };
 
+  // Close the modal and reset the current appointment
   const handleClose = () => {
     setIsModalOpen(false);
     setCurrentAppointment(null);
   };
 
+  // Return null if the modal is not open
   if (!isModalOpen) return null;
 
   return (
@@ -72,7 +79,7 @@ export default function AppointmentModal() {
       <div className="bg-white dark:bg-gray-800 rounded-lg shadow-xl w-full max-w-md">
         <div className="p-6">
           <h3 className="text-lg font-medium text-gray-900 dark:text-gray-100 mb-4">
-            {currentAppointment ? 'Edit Appointment' : 'Book Appointment'}
+            {currentAppointment ? 'Edit Appointment' : 'Book Appointment'} {/* Title changes based on context */}
           </h3>
           <form onSubmit={handleSubmit}>
             <div className="mb-4">
