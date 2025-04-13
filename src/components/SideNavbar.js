@@ -14,7 +14,7 @@ export default function SideNavbar() {
   const [collapsed, setCollapsed] = useState(false);
 
   return (
-    <div className={`flex flex-col h-screen bg-white dark:bg-gray-800 shadow-lg transition-all duration-300 ${collapsed ? 'w-20' : 'w-64'}`}>
+    <div className={`flex flex-col h-screen bg-white dark:bg-gray-800 shadow-lg transition-all duration-300 ${collapsed ? 'w-20' : 'w-64'} sticky top-0`}>
       <div className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700">
         {!collapsed && (
           <h2 className="text-xl font-bold text-gray-800 dark:text-white">HealthLoop</h2>
