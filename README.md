@@ -40,7 +40,7 @@ npm install
 npm run dev
 
 ### 4. Open your browser and visit:
-http://localhost:3000
+https://healthloop.vercel.app/
 
 ---
 
@@ -58,8 +58,8 @@ Contributions are welcome! Feel free to fork the repo and submit a pull request.
 ---
 
 ## 📷 Screenshots
-Add screenshots or demo GIFs here if available.
+![Screenshot 2025-04-14 002615](https://github.com/user-attachments/assets/bed33e7c-78cf-4d2f-bd67-54569338c6b7)
 
-### Made with ❤️ by Jigyansu Mishra
+---
 
-### check it is correct or not
+#### Made with ❤️ by Jigyansu Mishra
